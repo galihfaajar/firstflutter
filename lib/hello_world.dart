@@ -7,10 +7,15 @@ class HelloWorld extends StatelessWidget{
     // TODO: implement build
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Belajar Flutter'),
+        title: const Text('Widget Column'),
       ),
-      body: const Center(
-        child: Text("Hello World"),
+      body: Column(
+        children: const [
+          Text('Kolom 1'),
+          Text('Kolom 2'),
+          Text('Kolom 3'),
+          Text('Kolom 4'),
+        ],
       ),
     );
   }
