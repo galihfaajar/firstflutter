@@ -61,21 +61,22 @@ class ItemProduk extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      child: Card(
-        child: ListTile(
-          title: Text(namaProduk.toString()),
-          subtitle: Text(harga.toString()),
+        child: Card(
+          child: ListTile(
+            title: Text(namaProduk.toString()),
+            subtitle: Text(harga.toString()),
+          ),
         ),
-      ),
-    onTap:(){
-        Navigator.push(context,
-          MaterialPageRoute(
-              builder: (context) => ProdukDetail(
-                kodeProduk: kodeProduk,
-                namaProduk: namaProduk,
-                harga: harga,
-              )));
-    }
+        onTap:(){
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                  builder: (context) => ProdukDetail(
+                    kodeProduk: kodeProduk,
+                    namaProduk: namaProduk,
+                    harga: harga,
+                  )));
+        }
     );
   }
 }
