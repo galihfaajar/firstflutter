@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:galih1/ui/produk_detail.dart';
 
 class ProdukForm extends StatefulWidget {
   const ProdukForm({Key? key}) : super(key: key);
@@ -9,6 +10,10 @@ class ProdukForm extends StatefulWidget {
 }
 
 class _ProdukFormState extends State<ProdukForm>{
+  final _kodeProdukTextboxController = TextEditingController();
+  final _namaProdukTextboxController = TextEditingController();
+  final _hargaProdukTextboxController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -30,18 +35,35 @@ class _ProdukFormState extends State<ProdukForm>{
   }
 
   _textboxKodeProduk() {
-    return TextField(decoration: const InputDecoration(labelText: "Kode Produk"));
+    return TextField(
+      decoration: const InputDecoration(labelText: "Kode Produk"),
+      controller: _kodeProdukTextboxController,);
   }
 
   _textboxNamaProduk() {
-    return TextField(decoration: const InputDecoration(labelText: "Nama Produk"));
+    return TextField(
+      decoration: const InputDecoration(labelText: "Nama Produk"),
+      controller: _namaProdukTextboxController,);
   }
 
   _textboxHargaProduk() {
-    return TextField(decoration: const InputDecoration(labelText: "Harga"));
+    return TextField(
+      decoration: const InputDecoration(labelText: "Harga"),
+      controller: _hargaProdukTextboxController,);
   }
 
   _tombolSimpan() {
-    return ElevatedButton(onPressed: () {}, child: const Text('Simpan'));
+    return ElevatedButton(onPressed: () {
+      String kodeProduk = _kodeProdukTextboxController.text;
+      String namaProduk = _namaProdukTextboxController.text;
+      int harga = int.parse(_hargaProdukTextboxController.text);
+      Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => ProdukDetail(
+            kodeProduk: kodeProduk,
+            namaProduk: namaProduk,
+            harga: harga,
+          )));
+    },
+        child: const Text('Simpan'));
   }
 }
