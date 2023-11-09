@@ -19,13 +19,29 @@ class _ProdukFormState extends State<ProdukForm>{
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TextField(decoration: const InputDecoration(labelText: "Kode Produk")),
-            TextField(decoration: const InputDecoration(labelText: "Nama Produk")),
-            TextField(decoration: const InputDecoration(labelText: "Harga")),
-            ElevatedButton(onPressed: () {}, child: const Text('Simpan'))
+            _textboxKodeProduk(),
+            _textboxNamaProduk(),
+            _textboxHargaProduk(),
+            _tombolSimpan()
           ],
         ),
       ),
     );
+  }
+
+  _textboxKodeProduk() {
+    return TextField(decoration: const InputDecoration(labelText: "Kode Produk"));
+  }
+
+  _textboxNamaProduk() {
+    return TextField(decoration: const InputDecoration(labelText: "Nama Produk"));
+  }
+
+  _textboxHargaProduk() {
+    return TextField(decoration: const InputDecoration(labelText: "Harga"));
+  }
+
+  _tombolSimpan() {
+    return ElevatedButton(onPressed: () {}, child: const Text('Simpan'));
   }
 }
