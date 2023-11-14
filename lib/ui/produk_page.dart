@@ -27,23 +27,20 @@ class _ProdukPageState extends State<ProdukPage> {
       ),
       body: ListView(
         children: const [
-          Card(
-            child: ListTile(
-              title: Text('Kulkas'),
-              subtitle: Text('2500000'),
-            ),
+          ItemProduk(
+            kodeProduk: "A001",
+            namaProduk: "Kulkas",
+            harga: 2500000,
           ),
-          Card(
-            child: ListTile(
-              title: Text('Televisi'),
-              subtitle: Text('5000000'),
-            ),
+          ItemProduk(
+            kodeProduk: "A002",
+            namaProduk: "TV",
+            harga: 5000000,
           ),
-          Card(
-            child: ListTile(
-              title: Text('Mesin Cuci'),
-              subtitle: Text('1500000'),
-            ),
+          ItemProduk(
+            kodeProduk: "A003",
+            namaProduk: "Mesin Cuci",
+            harga: 1500000,
           ),
         ],
       ),
